@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block banner %}
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+	<div class="container">
+		<div class="row banner_inner">
+			<div class="col-lg-12">
+                <hr>
+                <h1 class="text-center text-capitalize">Login Here</h1>
+                <hr>
+            </div>
+		</div>
+	</div>
+</section>
+<!--================End Home Banner Area =================-->
+{% endblock %}
+
+
+{% block content %}
+    {% include 'accounts/_form.html' with form=form action="Login" %}
+    <br>
+    <span>Don't Have An Account <a href="{% url 'register' %}">Register</a></span>
+{% endblock %}

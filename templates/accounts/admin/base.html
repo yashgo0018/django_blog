@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		{% include 'accounts/admin/base/_head.html' %}
+	</head>
+	<body>
+		<div class="wrapper ">
+			{% include 'accounts/admin/base/_sidebar.html' %}
+			<div class="main-panel" id="main-panel">
+				{% include 'accounts/admin/base/_header.html' %}
+				<div class="panel-header panel-header-sm"></div>
+				<div class="content">
+					<div class="row">
+						<div class="col-lg-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title">{% block title %}{% endblock %}</h4>
+								</div>
+								<div class="card-body ">
+									{% block content %}{% endblock %}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% include 'accounts/admin/base/_footer.html' %}
+			</div>
+		</div>
+		{% include 'accounts/admin/base/_scripts.html' %}
+	</body>
+</html>

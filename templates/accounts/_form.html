@@ -1,0 +1,5 @@
+<form method="POST" class="text-center">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" class="genric-btn success circle arrow e-large" value="{{ action }}" />
+</form>

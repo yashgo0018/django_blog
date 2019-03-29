@@ -1,9 +1,26 @@
-{% extends 'main_base.html' %}
-
-{% block body %}
+{% extends 'main_base.html' %} {% block banner %}
+<!--================Home Banner Area =================-->
+<section class="banner_area">
+	<div class="container">
+		<div class="row banner_inner">
+			<div class="col-lg-5"></div>
+			<div class="col-lg-7">
+				<div class="banner_content text-center">
+					<h2>{{title}}</h2>
+					<div class="page_link">
+						<a href="/">Home</a>
+						<a href="{{ request.path }}">{% block title %}{% endblock %}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!--================End Home Banner Area =================-->
+{% endblock %} {% block body %}
 <section class="blog_area p_120">
-    <div class="container">
-        {% block content %} {% endblock %}
-    </div>
+	<div class="container">
+		{% block content %} {% endblock %}
+	</div>
 </section>
 {% endblock %}

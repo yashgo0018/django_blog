@@ -46,7 +46,6 @@ class DashboardView(SuperUserRequiredMixin, TemplateView):
 class PostCreateView(SuperUserRequiredMixin, CreateView):
     template_name = "accounts/admin/create/post.html"
     model = Post
-    queryset = Post.objects.all()
     form_class = PostForm
 
     def form_valid(self, form):
@@ -57,7 +56,6 @@ class PostCreateView(SuperUserRequiredMixin, CreateView):
 class PostUpdateView(SuperUserRequiredMixin, UpdateView):
     template_name = "accounts/admin/create/post.html"
     model = Post
-    queryset = Post.objects.all()
     form_class = PostForm
 
     def form_valid(self, form):

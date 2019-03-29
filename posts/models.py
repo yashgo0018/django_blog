@@ -17,6 +17,7 @@ User = get_user_model()
 class Post(models.Model):
     title = models.CharField(max_length=250)
     slug = models.SlugField()
+    description = models.TextField(max_length=5000)
     content = RichTextUploadingField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
@@ -35,6 +36,12 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         return reverse("Post_detail", kwargs={"slug": self.slug})
+
+    def get_edit_url(self):
+        return reverse("edit_post", kwargs={"slug": self.slug})
+
+    def get_delete_url(self):
+        return reverse("delete_post", kwargs={"slug": self.slug})
 
     @property
     def total_comments(self):

@@ -1,8 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
-from django.views.generic import DetailView, ListView, View
-
+from django.views.generic import DetailView, ListView, View, DeleteView
+from django.urls import reverse
 from .models import Post, Comment
+from accounts.mixins import SuperUserRequiredMixin
 
 
 class PostsList(ListView):
@@ -26,3 +27,10 @@ class CommentHandler(LoginRequiredMixin, View):
         comment_obj = Comment(content=comment, author=request.user, post=post)
         comment_obj.save()
         return redirect(post.get_absolute_url())
+
+
+class PostDeleteView(SuperUserRequiredMixin, DeleteView):
+    model = Post
+    context_object_name = "obj"
+    template_name = "accounts/admin/delete.html"
+    success_url = "/accounts/list/posts"

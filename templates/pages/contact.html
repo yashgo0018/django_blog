@@ -1,118 +1,111 @@
-{% extends 'fullwidth_base.html' %}
-
-{% block banner %}
-<!--================Home Banner Area =================-->
-<section class="banner_area">
-    <div class="container">
-        <div class="row banner_inner">
-            <div class="col-lg-5"></div>
-            <div class="col-lg-7">
-                <div class="banner_content text-center">
-                    <h2>Contact Us</h2>
-                    <div class="page_link">
-                        <a href="/">Home</a>
-                        <a href="/contact">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--================End Home Banner Area =================-->
-{% endblock %}
-
-{% block content %}
+{% extends 'fullwidth_base.html' %} {% block title %}Contact Us{% endblock %} {% block content %}
 <!--================Contact Area =================-->
 <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.607411401383!2d77.19917857298148!3d28.680560342125993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd8efeab59d1%3A0xc8b9b3e80502ab39!2sKamla+Nagar%2C+New+Delhi%2C+Delhi+110007!5e0!3m2!1sen!2sin!4v1552131549064"
-    width="100%"
-    height="450"
-    frameborder="0"
-    style="border:0"
-    allowfullscreen
-    class="mapBox"
+	src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.607411401383!2d77.19917857298148!3d28.680560342125993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd8efeab59d1%3A0xc8b9b3e80502ab39!2sKamla+Nagar%2C+New+Delhi%2C+Delhi+110007!5e0!3m2!1sen!2sin!4v1552131549064"
+	width="100%"
+	height="450"
+	frameborder="0"
+	style="border:0"
+	allowfullscreen
+	class="mapBox"
 ></iframe>
 <div class="row">
-    <div class="col-lg-3">
-        <div class="contact_info">
-            <div class="info_item">
-                <i class="lnr lnr-home"></i>
-                <h6>California, United States</h6>
-                <p>Santa monica bullevard</p>
-            </div>
-            <div class="info_item">
-                <i class="lnr lnr-phone-handset"></i>
-                <h6><a href="#">00 (440) 9865 562</a></h6>
-                <p>Mon to Fri 9am to 6 pm</p>
-            </div>
-            <div class="info_item">
-                <i class="lnr lnr-envelope"></i>
-                <h6><a href="#">support@colorlib.com</a></h6>
-                <p>Send us your query anytime!</p>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-9">
-        <form class="row contact_form" method="post" id="contactForm" novalidate="novalidate" data-valid="{{valid}}">
-            {% csrf_token %}
-            <div class="col-md-6">
-                <div class="form-group">
-                    {{ form.name }}
-                </div>
-                <div class="form-group">
-                    {{ form.email }}
-                </div>
-                <div class="form-group">
-                    {{ form.subject }}
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    {{ form.message }}
-                </div>
-            </div>
-            <div class="col-md-12 text-right">
-                <button type="submit" value="submit" class="btn submit_btn">Send Message</button>
-            </div>
-        </form>
-    </div>
+	<div class="col-lg-3">
+		<div class="contact_info">
+			<div class="info_item">
+				<i class="lnr lnr-home"></i>
+				<h6>California, United States</h6>
+				<p>Santa monica bullevard</p>
+			</div>
+			<div class="info_item">
+				<i class="lnr lnr-phone-handset"></i>
+				<h6><a href="#">00 (440) 9865 562</a></h6>
+				<p>Mon to Fri 9am to 6 pm</p>
+			</div>
+			<div class="info_item">
+				<i class="lnr lnr-envelope"></i>
+				<h6><a href="#">support@colorlib.com</a></h6>
+				<p>Send us your query anytime!</p>
+			</div>
+		</div>
+	</div>
+	<div class="col-lg-9">
+		<form
+			class="row contact_form"
+			method="post"
+			id="contactForm"
+			novalidate="novalidate"
+			data-valid="{{ valid }}"
+		>
+			{% csrf_token %}
+			<div class="col-md-6">
+				<div class="form-group">
+					{{ form.name }}
+				</div>
+				<div class="form-group">
+					{{ form.email }}
+				</div>
+				<div class="form-group">
+					{{ form.subject }}
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="form-group">
+					{{ form.message }}
+				</div>
+			</div>
+			<div class="col-md-12 text-right">
+				<button type="submit" value="submit" class="btn submit_btn">
+					Send Message
+				</button>
+			</div>
+		</form>
+	</div>
 </div>
 <!--================Contact Area =================-->
 
 <!--================Contact Success and Error message Area =================-->
 <div id="success" class="modal modal-message fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-close"></i>
-                </button>
-                <h2>Thank you</h2>
-                <p>Your message is successfully sent...</p>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button
+					type="button"
+					class="close"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					<i class="fa fa-close"></i>
+				</button>
+				<h2>Thank you</h2>
+				<p>Your message is successfully sent...</p>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Modals error -->
 
 <div id="error" class="modal modal-message fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <i class="fa fa-close"></i>
-                </button>
-                <h2>Sorry !</h2>
-                <p> Something went wrong </p>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button
+					type="button"
+					class="close"
+					data-dismiss="modal"
+					aria-label="Close"
+				>
+					<i class="fa fa-close"></i>
+				</button>
+				<h2>Sorry !</h2>
+				<p>Something went wrong</p>
+			</div>
+		</div>
+	</div>
 </div>
 <!--================End Contact Success and Error message Area =================-->
-{% endblock %}
-
-{% block scripts %}
+{% endblock %} {% block scripts %}
 <!-- contact js -->
 <script src="/static/js/jquery.form.js"></script>
 <script src="/static/js/jquery.validate.min.js"></script>

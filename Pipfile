@@ -10,6 +10,8 @@ autopep8 = "*"
 django = "*"
 pillow = "*"
 django-ckeditor = "*"
+gunicorn = "*"
+django-heroku = "*"
 
 [requires]
 python_version = "3.7"

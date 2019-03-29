@@ -14,7 +14,7 @@ SECRET_KEY = "6jik_)q3eysljjobq!+4f&jo4gg6zl#et8tqq-aysmxs_1*h63"
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["django-python-blog.herokuapp.com"]
 AUTH_USER_MODEL = 'accounts.User'
 
 

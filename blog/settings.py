@@ -161,4 +161,5 @@ EMAIL_POST = 587
 EMAIL_USE_TLS = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-# django_heroku.settings(locals())
+
+django_heroku.settings(locals())

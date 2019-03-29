@@ -9,7 +9,7 @@ TITLE = "Opium Blog"
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "6jik_)q3eysljjobq!+4f&jo4gg6zl#et8tqq-aysmxs_1*h63"
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -82,17 +82,14 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 #     }
 # }
 
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db2q37k22jjq',
-        'USER': 'xcnggivebkxvau',
-        'PASSWORD': '74c753992445389d4cae04b185583fb9f0be80101cace0c52097117a7e7d610d',
-        'HOST': 'ec2-54-247-70-127.eu-west-1.compute.amazonaws.com',
-        'PORT': '5432',
-    }
+    'default': dj_database_url.config()
 }
 
+DATABASES["default"]["CONN_MAX_AGE"] = 500
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
